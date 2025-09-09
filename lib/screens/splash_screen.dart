@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mafin/main.dart';
 import 'package:mafin/screens/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen>
-with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
@@ -25,8 +24,10 @@ with SingleTickerProviderStateMixin {
 
   @override
   void dispose() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, 
-    overlays: SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: SystemUiOverlay.values,
+    );
   }
 
   @override
@@ -34,14 +35,10 @@ with SingleTickerProviderStateMixin {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: const BoxDecoration(
-          color: Colors.black
-        ),
+        decoration: const BoxDecoration(color: Colors.black),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/images/MaFin-logo Remastered.png"),
-          ],
+          children: [Image.asset("assets/images/MaFin-logo Remastered.png")],
         ),
       ),
     );
